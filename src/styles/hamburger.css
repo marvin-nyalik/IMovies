@@ -1,0 +1,41 @@
+.menu-toggle {
+  position: relative;
+  height: 10px;
+  margin-top: 16px;
+  padding: 0 23px;
+  cursor: pointer;
+  z-index: 999;
+  transform: translateY(2px);
+}
+
+.menu-toggle::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background: var(--clr-black);
+  transform: translateY(13px);
+  transition: 0.5s;
+}
+
+.active.menu-toggle::before {
+  transform: translateY(2px) rotate(45deg);
+  background: var(--clr-white);
+}
+
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background: var(--clr-black);
+  box-shadow: 0 -8px 0 var(--clr-black);
+  transform: translateY(5px);
+  transition: 0.5s;
+}
+
+.active.menu-toggle::after {
+  transform: translateY(0) rotate(-45deg);
+  box-shadow: 0 0 0 var(--clr-black);
+  background: var(--clr-white);
+}
